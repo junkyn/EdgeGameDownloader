@@ -1,18 +1,52 @@
 * {
     margin: 0 auto;
-    margin-top: 10px;
   }
-
+  header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    font-size:40px;
+    text-align: center;
+    font-family: "Sunflower", sans-serif;
+    background-color: #FED057;
+  }
+  aside{
+      height: 100%;
+			position: fixed;
+			background-color: #FED057;
+			width: 200px;
+			transform: translateX(-100%);
+			left: 200px;
+  }
+  ul{
+    padding:0px;
+  }
+  section{
+    margin-left:200px;
+    margin-top:40px;
+  }
+  .menu{
+    margin-top:10px;
+    margin-bottom:10px;
+    width:100%;
+    height:50px;
+    background-color: black;
+    text-align: center;
+    line-height:50px;
+    color:white;
+    font-size:20px;
+    font-family:  "Sunflower", sans-serif;
+  }
+  .menu:hover{
+    background-color:white;
+    color:black;
+  }
   .container { 
     width: 90%;
     max-width: 1200px;
     min-width: 370px;
     background-color: gainsboro;
-  }
-
-  header {
-    height: 200px;
-    text-align: center; 
   }
 
   h1 {
@@ -21,9 +55,12 @@
     text-underline-position: under;
     line-height: 100px;
   }
-  
+  iframe{
+    margin-top:30px;
+    width:300px;
+  }
   section {
-    width: 1200px;
+    width: 80%;
   }
 
   .card {
@@ -37,25 +74,45 @@
     float:left;
     margin-left : 10px;
     margin-right : 10px;
+    margin-top:20px;
+    margin-bottom:10px;
   }
     .card img {
       width: 300px;
       height: 150px;
       border-radius: 5%
     }
+    .cafe{
+      display: block;
+      font-family:"Noto Sans KR", sans-serif;
+      text-align: center;
+      height:30px;
+      margin-top:30px;
+      margin-bottom:30px;
+      font-size:20px;
+    }
 
     p {
       line-height: 20px;
     }
-
+    .name {
+      margin-top:20px;
+      height:60px;
+      line-height:60px;
+  
+      font-size:30px;
+      font-family:  "Sunflower", sans-serif;
+    }
+    .maker{
+      font-family:"Noto Sans KR", sans-serif;
+    }
     .download {
       text-align: center;
+      font-family:"Noto Sans KR", sans-serif; 
       width: 30px;
+      font-size:20px;
       background-color: wheat;
       color: brown;
-      position: relative;
-      bottom: 65px;
-      left: 100px;
     }
 
   footer {
@@ -64,19 +121,5 @@
     line-height: 50px;
   } 
 
-    @media (min-width:1280px) {
-      section { width: 1040px; height: 580px; }
-    }
 
-    @media (max-width:1279px) {
-      section { width: 780px; height: 870px; }
-    }
-    
-    @media (max-width:900px) {
-      section { width: 520px; height: 1160px; }
-    }
-
-    @media (max-width:600px) {
-      section { width: 260px; height: 2320px; }
-    }
    
