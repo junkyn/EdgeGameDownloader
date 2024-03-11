@@ -37,6 +37,7 @@ function init(){
     
 }
 function initGame(key){
+    $(".game").empty();
     gameList = gameDictionary.get(key);
     for(let i = 0; i<gameList.length; i++){
         console.log(game);
