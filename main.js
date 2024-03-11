@@ -47,7 +47,7 @@ function initGame(key){
         
         // ?��미�?? ?��?�� ?��?��
         var img = document.createElement("img");
-        img.src = game.image;
+        img.setAttribute('src',game.image);
         console.log(img.src);
         // �?? 번째 p ?��?�� ?��?��
         var p1 = document.createElement("p");
