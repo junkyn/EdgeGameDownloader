@@ -45,38 +45,37 @@ function initGame(key){
         var newDiv = document.createElement("div");
         newDiv.className = "card";
         
-        // ?ï¿½ï¿½ë¯¸ï¿½?? ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½
         var img = document.createElement("img");
         img.setAttribute('src',game.image);
         console.log(img.src);
-        // ï¿?? ë²ˆì§¸ p ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½
+        // ? ?? è¸°ë‰? p ?? ?™?˜™?? ?™?˜™ ?? ?™?˜™?? ?™?˜™
         var p1 = document.createElement("p");
         var starsSpan = document.createElement("span");
         starsSpan.style.color = "#e2703a";
         starsSpan.innerHTML = game.name;
         p1.appendChild(starsSpan);
         
-        // ?ï¿½ï¿½ ë²ˆì§¸ p ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½
+        // ?? ?™?˜™ è¸°ë‰? p ?? ?™?˜™?? ?™?˜™ ?? ?™?˜™?? ?™?˜™
         var p2 = document.createElement("p");
         var fontSizeSpan = document.createElement("span");
         fontSizeSpan.style.fontSize = "20px";
         fontSizeSpan.innerHTML = game.name;
         p2.appendChild(fontSizeSpan);
         
-        // ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½????ï¿½ï¿½?ï¿½ï¿½ div ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½
+        // ?? ?™?˜™?? ?™?˜™ ?? ?™?˜™????? ?™?˜™?? ?™?˜™ div ?? ?™?˜™?? ?™?˜™ ?? ?™?˜™?? ?™?˜™
         var downloadlink = document.createElement("a");
         downloadlink.href = game.download;
         downloadlink.target = "_blank";
         downloadlink.className = "download";
-        downloadlink.innerHTML = "?‹¤?š´ë¡œë“œ";
+        downloadlink.innerHTML = "??–??Š«æ¿¡ì’•ë±?";
         
-        // ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ë¡œìš´ div?ï¿½ï¿½ ì¶”ï¿½??
+        // ?? ?™?˜™?? ?™?˜™?? ?™?˜™ ?? ?™?˜™?? ?™?˜™?? ?™?˜™?? ?™?˜™ ?? ?™?˜™æ¿¡ì’–?Š« div?? ?™?˜™ ?•°ë·‚ì˜™??
         newDiv.appendChild(img);
         newDiv.appendChild(p1);
         newDiv.appendChild(p2);
         newDiv.appendChild(downloadlink);
         
-        // ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ divï¿?? ë¬¸ì„œ?ï¿½ï¿½ ì¶”ï¿½??
+        // ?? ?™?˜™?? ?™?˜™?? ?™?˜™ div? ?? ?‡¾ëª„ê½Œ?? ?™?˜™ ?•°ë·‚ì˜™??
         $(".game").append(newDiv);
     }
     console.log(gameList);
