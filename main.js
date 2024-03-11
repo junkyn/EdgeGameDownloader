@@ -48,8 +48,8 @@ function initGame(key){
         // ?��미�?? ?��?�� ?��?��
         var img = document.createElement("img");
         img.src = game.image;
-        
-        // �? 번째 p ?��?�� ?��?��
+        console.log(img.src);
+        // �?? 번째 p ?��?�� ?��?��
         var p1 = document.createElement("p");
         var starsSpan = document.createElement("span");
         starsSpan.style.color = "#e2703a";
@@ -68,7 +68,7 @@ function initGame(key){
         downloadlink.href = game.download;
         downloadlink.target = "_blank";
         downloadlink.className = "download";
-        downloadlink.innerHTML = "다운로드";
+        downloadlink.innerHTML = "?��?��로드";
         
         // ?��?��?�� ?��?��?��?�� ?��로운 div?�� 추�??
         newDiv.appendChild(img);
@@ -76,7 +76,7 @@ function initGame(key){
         newDiv.appendChild(p2);
         newDiv.appendChild(downloadlink);
         
-        // ?��?��?�� div�? 문서?�� 추�??
+        // ?��?��?�� div�?? 문서?�� 추�??
         $(".game").append(newDiv);
     }
     console.log(gameList);
