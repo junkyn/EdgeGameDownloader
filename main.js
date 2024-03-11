@@ -9,12 +9,14 @@ $(document).ready(function(){
         jsonData = dataTable.toJSON();            
         jsonData = JSON.parse(jsonData);
         console.log(jsonData)
+        var lastKey;
         for(var i=0; i < jsonData.rows.length; i++) {
             var key = jsonData.rows[i].c[0].v;
             if(!gameDictionary.has(key)){
                 gameDictionary.set(key,[]);
                 var htmlData = "<p class=\"menu\" onclick=\"initGame(\'"+key+"\')\">" + jsonData.rows[i].c[0].v;
                 $(".list ul").append(htmlData);
+                lastKey = key;
             }
             var htmlData = "";
             var link = jsonData.rows[i].c[2].v;
@@ -36,14 +38,12 @@ $(document).ready(function(){
             gameObject.makers = jsonData.rows[i].c[5].v;
             gameDictionary.get(key).push(gameObject);
         }
-        init();
+        initGame(lastKey);
         });
       });
 
 });
-function init(){
-    
-}
+
 function initGame(key){
     $(".game").empty();
     gameList = gameDictionary.get(key);
