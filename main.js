@@ -45,38 +45,38 @@ function initGame(key){
         var newDiv = document.createElement("div");
         newDiv.className = "card";
         
-        // 이미지 요소 생성
+        // ?��미�?? ?��?�� ?��?��
         var img = document.createElement("img");
         img.src = game.image;
         
-        // 첫 번째 p 요소 생성
+        // �? 번째 p ?��?�� ?��?��
         var p1 = document.createElement("p");
         var starsSpan = document.createElement("span");
         starsSpan.style.color = "#e2703a";
         starsSpan.innerHTML = game.name;
         p1.appendChild(starsSpan);
         
-        // 두 번째 p 요소 생성
+        // ?�� 번째 p ?��?�� ?��?��
         var p2 = document.createElement("p");
         var fontSizeSpan = document.createElement("span");
         fontSizeSpan.style.fontSize = "20px";
         fontSizeSpan.innerHTML = game.name;
         p2.appendChild(fontSizeSpan);
         
-        // 돈을 나타내는 div 요소 생성
+        // ?��?�� ?��????��?�� div ?��?�� ?��?��
         var downloadlink = document.createElement("a");
         downloadlink.href = game.download;
         downloadlink.target = "_blank";
         downloadlink.className = "download";
         downloadlink.innerHTML = "다운로드";
         
-        // 생성한 요소들을 새로운 div에 추가
+        // ?��?��?�� ?��?��?��?�� ?��로운 div?�� 추�??
         newDiv.appendChild(img);
         newDiv.appendChild(p1);
         newDiv.appendChild(p2);
         newDiv.appendChild(downloadlink);
         
-        // 생성한 div를 문서에 추가
+        // ?��?��?�� div�? 문서?�� 추�??
         $(".game").append(newDiv);
     }
     console.log(gameList);
