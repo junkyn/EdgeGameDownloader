@@ -4,6 +4,7 @@ $(document).ready(function(){
     gameDictionary = new Map();
     const frontLinkStr = 'https://docs.google.com/uc?export=download&id='
     const backLinkStr = '&confirm=t'
+    const imageLink = 'https://drive.google.com/uc?export=view&id='
     google.charts.load('current', { packages: ['corechart'] }).then(function () {
         var query = new google.visualization.Query('http://spreadsheets.google.com/tq?key=1RoujVUSQD7mOI2tpeqBszpjjt4tkgLEpr1LHcWND3O8&pub=1');
         query.send(function (response) {            
@@ -24,7 +25,7 @@ $(document).ready(function(){
             var gameObject = new Object();
             gameObject.name = jsonData.rows[i].c[1].v;
             gameObject.download = link;
-            gameObject.image = jsonData.rows[i].c[3].v;
+            gameObject.image = imageLink+jsonData.rows[i].c[3].v.split('/')[5];
             gameObject.cafe = jsonData.rows[i].c[4].v;
             gameDictionary.get(key).push(gameObject);
         }
@@ -48,34 +49,29 @@ function initGame(key){
         var img = document.createElement("img");
         img.setAttribute('src',game.image);
         console.log(img.src);
-        // ? ?? è¸°ë‰? p ?? ?™?˜™?? ?™?˜™ ?? ?™?˜™?? ?™?˜™
         var p1 = document.createElement("p");
         var starsSpan = document.createElement("span");
         starsSpan.style.color = "#e2703a";
         starsSpan.innerHTML = game.name;
         p1.appendChild(starsSpan);
         
-        // ?? ?™?˜™ è¸°ë‰? p ?? ?™?˜™?? ?™?˜™ ?? ?™?˜™?? ?™?˜™
         var p2 = document.createElement("p");
         var fontSizeSpan = document.createElement("span");
         fontSizeSpan.style.fontSize = "20px";
         fontSizeSpan.innerHTML = game.name;
         p2.appendChild(fontSizeSpan);
         
-        // ?? ?™?˜™?? ?™?˜™ ?? ?™?˜™????? ?™?˜™?? ?™?˜™ div ?? ?™?˜™?? ?™?˜™ ?? ?™?˜™?? ?™?˜™
         var downloadlink = document.createElement("a");
         downloadlink.href = game.download;
         downloadlink.target = "_blank";
         downloadlink.className = "download";
         downloadlink.innerHTML = "??–??Š«æ¿¡ì’•ë±?";
         
-        // ?? ?™?˜™?? ?™?˜™?? ?™?˜™ ?? ?™?˜™?? ?™?˜™?? ?™?˜™?? ?™?˜™ ?? ?™?˜™æ¿¡ì’–?Š« div?? ?™?˜™ ?•°ë·‚ì˜™??
         newDiv.appendChild(img);
         newDiv.appendChild(p1);
         newDiv.appendChild(p2);
         newDiv.appendChild(downloadlink);
         
-        // ?? ?™?˜™?? ?™?˜™?? ?™?˜™ div? ?? ?‡¾ëª„ê½Œ?? ?™?˜™ ?•°ë·‚ì˜™??
         $(".game").append(newDiv);
     }
     console.log(gameList);
