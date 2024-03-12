@@ -24,6 +24,9 @@ $(document).ready(function(){
             gameObject.name = jsonData.rows[i].c[1].v;
             gameObject.download = link;
             var imageLink = jsonData.rows[i].c[3].v;
+            if(imageLink=="Default"){
+                imageLink = "https://cafe.naver.com/common/storyphoto/viewer.html?src=https%3A%2F%2Fcafeptthumb-phinf.pstatic.net%2FMjAyNDAzMTJfMjI5%2FMDAxNzEwMTcwMTI2NTc3.4WA779aYiTCx536tDZqXLKJP1zUJ7NvRF5ISZpDiH98g.VwrVOlo9pNcPzKfbkRRb01mdK6GOa8ExwiVAoj3IDEQg.PNG%2F%2525ED%252599%252594%2525EB%2525A9%2525B4_%2525EC%2525BA%2525A1%2525EC%2525B2%252598_2024-03-12_001459.png%3Ftype%3Dw1600";
+            }
             try{
                 var split = imageLink.split('w');
                 if(split.length>1){
