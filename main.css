@@ -42,6 +42,10 @@
     background-color:white;
     color:black;
   }
+  .selected{
+    background-color:white;
+    color:black;
+  }
   .container { 
     width: 90%;
     max-width: 1200px;

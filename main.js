@@ -1,5 +1,6 @@
 var jsonData;
 var gameDictionary;
+var selectedMenu=-1;
 $(document).ready(function(){
     gameDictionary = new Map();
     google.charts.load('current', { packages: ['corechart'] }).then(function () {
@@ -14,7 +15,7 @@ $(document).ready(function(){
             var key = jsonData.rows[i].c[0].v;
             if(!gameDictionary.has(key)){
                 gameDictionary.set(key,[]);
-                var htmlData = "<p class=\"menu\" onclick=\"initGame(\'"+key+"\')\">" + jsonData.rows[i].c[0].v;
+                var htmlData = "<p id=\""+key.replace(' ','')+"\" class=\"menu\" onclick=\"initGame(\'"+key+"\')\">" + jsonData.rows[i].c[0].v;
                 $(".list ul").append(htmlData);
                 lastKey = key;
             }
@@ -49,6 +50,12 @@ $(document).ready(function(){
 
 function initGame(key){
     $(".game").empty();
+    var keyStr = '#'+key.replace(' ','');
+    if(selectedMenu != -1){
+        $(selectedMenu).removeClass('selected');
+    }
+    $(keyStr).addClass('selected');
+    selectedMenu = keyStr;
     gameList = gameDictionary.get(key);
     for(let i = 0; i<gameList.length; i++){
         var game = gameList[i];
