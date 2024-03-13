@@ -40,6 +40,7 @@ $(document).ready(function(){
             gameObject.image = imageLink;
             gameObject.cafe = jsonData.rows[i].c[4].v;
             gameObject.makers = jsonData.rows[i].c[5].v;
+            gameObject.platform = jsonData.rows[i].c[6].v;
             gameDictionary.get(key).push(gameObject);
         }
         initGame(lastKey);
@@ -78,6 +79,11 @@ function initGame(key){
         fontSizeSpan.className = "name"
         fontSizeSpan.innerHTML = game.name;
         p2.appendChild(fontSizeSpan);
+        var p3 = document.createElement("p");
+        var fontSizeSpan2 = document.createElement("span");
+        fontSizeSpan2.className = "platform"
+        fontSizeSpan2.innerHTML = game.platform;
+        p3.appendChild(fontSizeSpan2);
         var cafe = document.createElement("a");
         cafe.href = game.cafe;
         cafe.target="_blank";
@@ -92,6 +98,7 @@ function initGame(key){
         newDiv.appendChild(img);
         newDiv.appendChild(p1);
         newDiv.appendChild(p2);
+        newDiv.appendChild(p3);
         newDiv.appendChild(cafe);
         newDiv.appendChild(downloadlink);
         
